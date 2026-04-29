@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryInsight - Ask Your Database in Plain English</title>
+    <meta name="description" content="QueryInsight is an enterprise AI analytics platform that converts natural language into secure, audited SQL queries.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="database" class="logo-icon"></i>
+                <span>QueryInsight</span>
+            </a>
+            <div class="nav-links">
+                <a href="#problem">Why QueryInsight</a>
+                <a href="#features">Features</a>
+                <a href="#tech">Security</a>
+                <a href="#waitlist" class="btn btn-primary nav-btn">Join Beta</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="tag-pill">
+                    <i data-lucide="shield-check"></i> Enterprise Beta Now Open
+                </div>
+
+                <h1 class="hero-title">
+                    Ask Your Database.<br>
+                    <span class="gradient-text">In Plain English.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    QueryInsight is the enterprise AI analytics platform that converts natural language into secure, audited SQL. Connect instantly and stop waiting on data engineering pipelines.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://queryinsight.streamlit.app/" target="_blank" class="btn btn-primary large">Access Live Demo <i data-lucide="external-link"></i></a>
+                    <a href="#features" class="btn btn-outline large">Technical Specs</a>
+                </div>
+
+                <!-- MOCKUP DASHBOARD -->
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-dot"></div>
+                        <div class="mockup-dot"></div>
+                        <span class="mockup-title">queryinsight-engine-prod</span>
+                    </div>
+
+                    <div class="mockup-body">
+                        <div class="mockup-sidebar">
+                            <div class="side-item">Active Schemas</div>
+                            <div class="side-link active"><i data-lucide="database"></i> postgres_prod</div>
+                            <div class="side-link"><i data-lucide="database"></i> marketing_metrics</div>
+                            <div class="side-link"><i data-lucide="database"></i> sales_q4</div>
+
+                            <div class="side-item" style="margin-top: 2rem;">Saved Queries</div>
+                            <div class="side-link"><i data-lucide="bookmark"></i> Top Resellers</div>
+                            <div class="side-link"><i data-lucide="bookmark"></i> Monthly Churn</div>
+                        </div>
+
+                        <div class="mockup-main">
+                            <div class="query-input">
+                                <i data-lucide="search" class="search-icon"></i>
+                                <span>Show me the top 5 customers by revenue this quarter.</span>
+                                <div class="enter-icon">
+                                    <i data-lucide="corner-down-left"></i>
+                                </div>
+                            </div>
+
+                            <div class="sql-output">
+                                <div class="sql-status">
+                                    <i data-lucide="zap"></i> Query Compiled Successfully
+                                </div>
+                                <div class="code-block">
+                                    <span class="keyword">SELECT</span> customer_name, <span class="function">SUM</span>(total_revenue) <span class="keyword">AS</span> revenue<br>
+                                    <span class="keyword">FROM</span> enterprise_sales_records<br>
+                                    <span class="keyword">WHERE</span> invoice_date >= <span class="string">'2026-10-01'</span><br>
+                                    <span class="keyword">GROUP BY</span> customer_name<br>
+                                    <span class="keyword">ORDER BY</span> revenue <span class="keyword">DESC LIMIT</span> 5;
+                                </div>
+                            </div>
+
+                            <div class="mockup-footer">
+                                <div class="footer-stat"><i data-lucide="check-circle"></i> SHA-256 Logged</div>
+                                <div class="footer-stat"><i data-lucide="clock"></i> Redis Cache: 0.1ms</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- METRICS SECTION -->
+        <section class="metrics">
+            <div class="metrics-container">
+                <div class="metric-item">
+                    <div class="metric-value">SHA-256</div>
+                    <div class="metric-label">Immutable Auditing</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">~0ms</div>
+                    <div class="metric-label">Redis Caching</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">Zero</div>
+                    <div class="metric-label">Data Retention APIs</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">7+</div>
+                    <div class="metric-label">RBAC Roles</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEM / SOLUTION SECTION -->
+        <section id="problem" class="problem-solution">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h2>Why We Built QueryInsight</h2>
+                </div>
+                <div class="ps-grid">
+                    <div class="ps-card ps-problem">
+                        <div class="ps-card-header">
+                            <i data-lucide="x-circle"></i>
+                            <h3>The BI Bottleneck</h3>
+                        </div>
+                        <p>Business analysts and marketing teams wait days or weeks for data engineers to write custom SQL reports. Attempting to use generic cloud LLMs usually risks leaking highly sensitive corporate schemas and customer payloads to third parties for model training.</p>
+                    </div>
+
+                    <div class="ps-card ps-solution">
+                        <div class="ps-card-header">
+                            <i data-lucide="check-circle"></i>
+                            <h3>Instant & Secure Answers</h3>
+                        </div>
+                        <p>QueryInsight eliminates the engineering bottleneck by giving non-technical teams an instant, self-service natural language interface. Built on a strict zero-retention architecture, we guarantee data privacy and regulatory compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES GRID -->
+        <section id="features" class="features">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h2>Built For The Enterprise</h2>
+                    <p class="section-subtitle">QueryInsight eliminates data bottlenecks while adhering to strict institutional compliance, sovereignty, and privacy requirements.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="cpu"></i></div>
+                        <h3>Secure Text-to-SQL Inference</h3>
+                        <p>Powered by an advanced state-of-the-art LLM. The completely secure NLP translation process strictly prevents your corporate schemas or data payloads from being used for AI training.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="lock"></i></div>
+                        <h3>System Governance & RBAC</h3>
+                        <p>Fine-grained Role-Based Access Control completely isolates administrators, data analysts, and generalized viewers.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Cryptographic Audit Chain</h3>
+                        <p>Every SQL query executed by the engine is SHA-256 hashed and mathematically linked, forming a non-repudiable compliance ledger.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="zap"></i></div>
+                        <h3>Intelligent Query Caching</h3>
+                        <p>Backed by Redis, identical data inquiries across your team are served instantly from memory, shielding your production database from load spikes.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="database"></i></div>
+                        <h3>RDBMS & SQL Frameworks</h3>
+                        <p>Engineered entirely for mature relational database architectures. We fully support PostgreSQL, MySQL, and SQLite.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="bar-chart-2"></i></div>
+                        <h3>Autonomous Visualizations</h3>
+                        <p>Stop configuring dashboards. The engine analyzes your postgres payload and automatically returns perfectly calibrated Plotly charts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL DETAILS SECTION -->
+        <section id="tech" class="tech-details">
+            <div class="section-container text-center">
+                <div class="section-header">
+                    <h2>SQL Injection Firewall</h2>
+                    <p class="section-subtitle">Security is not an afterthought. Built into the core of the NaturalQuery runtime is a regex-based execution firewall.</p>
+                </div>
+
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="window-dots"><span></span><span></span><span></span></div>
+                        <span class="file-name"><i data-lucide="code"></i> query_engine.py</span>
+                    </div>
+                    <div class="code-body">
+                        <pre><code><span class="comment"># 1. Validate Security Firewall</span>
+<span class="keyword">is_safe</span>, err = <span class="function">validate_sql_safety</span>(generated_sql)
+<span class="keyword">if not</span> is_safe:
+    <span class="keyword">return</span> None, err
+
+<span class="comment"># 2. Verify Cosine Similarity inside RAG memory</span>
+confidence_score = <span class="function">find_similar_query</span>(q_hash)
+<span class="keyword">if</span> confidence_score > <span class="number">0.90</span>:
+    <span class="keyword">return</span> cached_gold_standard_sql
+
+<span class="comment"># 3. Log query execution to SHA-256 ledger</span>
+<span class="function">log_system_event</span>(db, query, status=<span class="string">"SUCCESS"</span>)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="waitlist" class="cta">
+            <div class="section-container text-center">
+                <h2>Reclaim Your Analytics Pipeline</h2>
+                <p>Stop your team from writing custom SQL. Join the beta to test our query engine today.</p>
+                
+                <form class="waitlist-form" id="beta-form">
+                    <input type="email" placeholder="Enter your work email address" required class="form-input">
+                    <button type="submit" class="btn btn-primary large">Join Waitlist</button>
+                </form>
+
+                <div class="announcement-badge">
+                    <div class="badge-dot"></div>
+                    <span>COMING SOON: 100% Offline Native Desktop Application</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="database"></i>
+                    <span>QueryInsight</span>
+                </div>
+                <p>Enterprise AI analytics platform for plain English database interaction. Built for absolute data sovereignty.</p>
+            </div>
+            <div class="footer-links-grid">
+                <div>
+                    <h4>Architecture</h4> <ul> <li><a href="../chiral/index.html">Secure Inference</a></li> <li><a href="../chiral/index.html">SQL Firewall</a></li> <li><a href="../queryinsight/index.html">RBAC Engine</a></li> <li><a href="../observo/index.html">Caching Layer</a></li> </ul>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../chiral/index.html">Chiral</a></li>
+                        <li><a href="../observo/index.html">Observo</a></li>
+                        <li><a href="../maha-maya/index.html">Maha Maya</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="../chiral/index.html">Founder Portfolio</a></li>
+                        <li><a href="../chiral/index.html">Github</a></li>
+                        <li><a href="../queryinsight/index.html">Linkedin</a></li>
+                        <li><a href="../observo/index.html">X</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QueryInsight Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
